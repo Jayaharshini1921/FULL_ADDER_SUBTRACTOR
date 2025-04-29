@@ -39,17 +39,50 @@ Borrow out = A'Bin + A'B + BBin
 **Truthtable**
 
 **Procedure**
+1.Open Quartus II and create a new project.
+
+2.Use schematic design entry to draw the full adder circuit.
+
+3.The circuit consists of XOR, AND, and OR gates.
+
+4.Compile the design, verify its functionality through simulation.
+
+5.Implement the design on the target device and program it.
+
+Full Subtractor:
+
+1.Follow the same steps as for the full adder.
+
+2.Draw the full subtractor circuit using schematic design.
+
+3.The circuit includes XOR, AND, OR gates to perform subtraction.
+
+4.Compile, simulate, implement, and program the design similarly to the full adder.
 
 Write the detailed procedure here
 
 **Program:**
+module fulladd_top(a,b,c,sum,carry,BO,DIFF);
+input a,b,c;
+output sum,carry,BO,DIFF;
+assign sum=a^b^c;
+assign carry= a&b | a&c | b&c;
+wire a0;
+not (a0,a);
+assign BO= b&c | a0&c | a0&b;
+assign DIFF=a^b^c;
+endmodule
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
-**RTL Schematic**
+**RTL Schemati
+![Screenshot 2025-04-29 150440](https://github.com/user-attachments/assets/4f0851d9-72ec-4600-8d75-7922895e18f1)
+c**
 
 **Output Timing Waveform**
+![Screenshot 2025-04-29 150448](https://github.com/user-attachments/assets/eec8ccd9-52ea-48e4-8740-faf33c15504f)
+
 
 **Result:**
 
